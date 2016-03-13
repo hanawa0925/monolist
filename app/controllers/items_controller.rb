@@ -14,6 +14,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @want_users = @item.users.group('users.id')
+    @have_users = @item.users.group('users.id')
   end
 
   private
